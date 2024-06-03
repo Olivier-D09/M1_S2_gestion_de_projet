@@ -31,7 +31,7 @@ public class RegisteryController {
         workersRepo.save(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
-       @Scheduled(fixedRate = 30000)
+    @Scheduled(fixedRate = 3000)
     public void removeInactiveWorkers() {
         Iterable<Worker> workers = workersRepo.findAll();
         LocalDateTime now = LocalDateTime.now();
